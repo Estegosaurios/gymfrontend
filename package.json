@@ -1,0 +1,19 @@
+{
+  "name": "gymfrontend",
+  "version": "0.0.1",
+  "description": "Vue app for estegosaurios gym",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Estegosaurios/gymfrontend.git"
+  },
+  "author": "Estegosaurios",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Estegosaurios/gymfrontend/issues"
+  },
+  "homepage": "https://github.com/Estegosaurios/gymfrontend#readme"
+}
