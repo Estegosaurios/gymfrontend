@@ -1,9 +1,10 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 function resolve(dir) {
-  return path.join(__dirname, '..', dir)
+  return path.join(__dirname, '..', dir);
 }
 
 module.exports = {
@@ -48,9 +49,16 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: resolve('dist/index.html'),
-      template: resolve('index.html'),
+      template: resolve('public/index.html'),
       inject: true
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: resolve('public/**/*'),
+        to: resolve('dist'),
+        ignore: ['*.html']
+      }
+    ]),
   ],
   devServer: {
     contentBase: resolve('dist'),
