@@ -71,6 +71,10 @@ module.exports = {
         from: resolve('public/**/*'),
         to: resolve('dist'),
         ignore: ['*.html']
+      },
+      {
+        from: resolve('src/service-worker.js'),
+        to: resolve('dist')
       }
     ]),
     new webpack.HotModuleReplacementPlugin()
@@ -79,6 +83,7 @@ module.exports = {
     contentBase: resolve('dist'),
     port: 8080,
     historyApiFallback: true,
-    hot: true
+    hot: true,
+    host: '0.0.0.0'
   }
 }

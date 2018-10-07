@@ -10,7 +10,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/programs',
       name: 'programs-overview',
       component: ProgramsOverview,
     },
@@ -18,6 +18,7 @@ export default new Router({
       path: '/workouts',
       name: 'workouts-overview',
       component: WorkoutsOverview,
-    }
+    },
+    { path: '*', redirect: '/programs' }
   ]
 });
