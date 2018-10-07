@@ -56,6 +56,7 @@ module.exports = {
     contentBase: resolve('dist'),
     compress: true,
     port: 8080,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   }
 }

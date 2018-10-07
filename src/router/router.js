@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import ProgramsOverview from '@/programs/ProgramsOverview';
+
+const  ProgramsOverview = () => import('@/programs/ProgramsOverview');
+const  WorkoutsOverview = () => import('@/workouts/WorkoutsOverview');
 
 Vue.use(Router);
 
@@ -9,8 +11,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'programs',
+      name: 'programs-overview',
       component: ProgramsOverview,
+    },
+    {
+      path: '/workouts',
+      name: 'workouts-overview',
+      component: WorkoutsOverview,
     }
   ]
 });
