@@ -4,7 +4,7 @@
   "description": "Vue app for estegosaurios gym",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --config build/webpack.base.conf.js"
+    "dev": "webpack-dev-server --hot --open --config build/webpack.base.conf.js"
   },
   "repository": {
     "type": "git",
