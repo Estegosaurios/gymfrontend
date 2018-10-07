@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-const  ProgramsOverview = () => import('@/programs/ProgramsOverview');
-const  WorkoutsOverview = () => import('@/workouts/WorkoutsOverview');
+const  ProgramsOverview = () => import(/* webpackChunkName: "programs-overview" */ '@/programs/ProgramsOverview');
+const  WorkoutsOverview = () => import(/* webpackChunkName: "workouts-overview" */ '@/workouts/WorkoutsOverview');
 
 Vue.use(Router);
 
