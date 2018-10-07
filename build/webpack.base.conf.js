@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -42,9 +43,22 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src')]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 }
+          },
+          'postcss-loader',
+          'sass-loader'
+        ]
       }
     ]
   },
+  devtool: '#cheap-module-eval-source-map',
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
@@ -59,12 +73,12 @@ module.exports = {
         ignore: ['*.html']
       }
     ]),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     contentBase: resolve('dist'),
-    compress: true,
     port: 8080,
-    hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    hot: true
   }
 }
