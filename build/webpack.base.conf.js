@@ -11,7 +11,7 @@ function resolve(dir) {
 module.exports = {
   mode: 'development',
   entry: {
-    app: resolve('src/main.js'),
+    app: resolve('src/main.js')
   },
   output: {
     path: resolve('dist'),
@@ -81,15 +81,21 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: false,
-    host: '0.0.0.0',
+    hot: true,
+    host: 'localhost',
     port: 8080,
+    publicPath: '/',
+    contentBase: false,
     historyApiFallback: {
       rewrites: [
         { from: /.*/, to: path.posix.join('/', 'index.html') },
       ],
     },
-    publicPath: '/',
-    hot: true
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        pathRewrite: {'^/api' : ''}
+      }
+    }
   }
 }
