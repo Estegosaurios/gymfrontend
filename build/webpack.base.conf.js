@@ -14,7 +14,8 @@ module.exports = {
     app: resolve('src/main.js'),
   },
   output: {
-    path: path.join(__dirname, '../dist'),
+    path: resolve('dist'),
+    publicPath: '/',
     filename: '[name].bundle.js'
   },
   resolve: {
@@ -71,14 +72,24 @@ module.exports = {
         from: resolve('public/**/*'),
         to: resolve('dist'),
         ignore: ['*.html']
+      },
+      {
+        from: resolve('src/service-worker.js'),
+        to: resolve('dist')
       }
     ]),
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: resolve('dist'),
+    contentBase: false,
+    host: '0.0.0.0',
     port: 8080,
-    historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [
+        { from: /.*/, to: path.posix.join('/', 'index.html') },
+      ],
+    },
+    publicPath: '/',
     hot: true
   }
 }
