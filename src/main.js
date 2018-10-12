@@ -2,6 +2,7 @@ import Vue from 'vue';
 import router from 'router/router';
 import store from 'store/store';
 import App from '@/App.vue';
+import '@/main.scss'
 
 new Vue({
   router,
@@ -11,5 +12,5 @@ new Vue({
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('./service-worker.js');
+    .register('/service-worker.js');
 }

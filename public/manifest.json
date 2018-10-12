@@ -17,4 +17,5 @@
   "background_color": "#FFFFFF",
   "theme_color": "#317EFB",
   "orientation": "portrait",
+  "start_url": "/index.html"
 }
