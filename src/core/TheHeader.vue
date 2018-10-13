@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-light justify-content-center bg-danger shadow-sm">
+  <nav class="navbar fixed-top navbar-light justify-content-center bg-danger shadow-sm">
     <span class="navbar-brand m-0 h1 font-weight-bold text-white">{{ title }}</span>
   </nav>
 </template>

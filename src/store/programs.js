@@ -12,6 +12,10 @@ const getters = {
 };
 
 const mutations = {
+  setProgram(state, program) {
+    if (state.programs.some(p => p === program)) { return }
+    state.programs.unshift(program)
+  },
   setPrograms(state, programs) {
     state.programs = programs;
   }
@@ -19,10 +23,16 @@ const mutations = {
 
 const actions = {
   fetchPrograms({ commit }) {
-    programManager.fetchPrograms().then(data => {
-      commit('mergeEntities', data.entities);
-      commit('setPrograms', data.result);
+    programManager.fetchPrograms().then(programs => {
+      commit('mergeEntities', programs.entities);
+      commit('setPrograms', programs.result);
     });
+  },
+  saveProgram({ commit }, data) {
+    programManager.saveProgram(data).then(program => {
+      commit('mergeEntities', program.entities);
+      commit('setProgram', program.result);
+    })
   }
 };
 

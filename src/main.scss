@@ -8,3 +8,10 @@ html {
 html, body {
   background-color: #EEEEEE;
 }
+
+#app > div {
+  position: fixed;
+  top: 56px;
+  height: calc(100vh - 97.59px);
+  overflow-y: auto;
+}

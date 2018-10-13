@@ -4,6 +4,7 @@
     class="btn btn-danger btn-lg rounded-circle shadow"
     type="button"
     value="+"
+    @click="handleClick"
   >
 </template>
 
@@ -21,6 +22,11 @@ export default {
         height: this.sm ? '40px' : '56px',
         width: this.sm ? '40px' : '56px'
       }
+    }
+  },
+  methods: {
+    handleClick(e) {
+      this.$emit('click', e)
     }
   }
 }

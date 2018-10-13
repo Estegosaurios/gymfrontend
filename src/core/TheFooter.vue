@@ -1,5 +1,5 @@
 <template>
-  <div class="footer bg-white">
+  <div class="fixed-bottom bg-white">
     <ul class="nav justify-content-around">
       <li
         v-for="route in routes"

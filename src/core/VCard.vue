@@ -1,8 +1,13 @@
 <template>
   <div class="card border-0 shadow-sm">
-    <div class="card-body">
+    <div
+      v-if="hasTitle"
+      class="card-body"
+    >
       <h5 class="card-title pb-5">{{ title }}</h5>
     </div>
+    <slot />
+    <slot name="actions" />
   </div>
 </template>
 
@@ -11,8 +16,20 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      default: ''
+    }
+  },
+  computed: {
+    hasTitle() {
+      return this.title !== ''
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.card {
+  overflow: hidden;
+}
+</style>
+

@@ -1,8 +1,10 @@
+import _ from 'lodash'
+
 const state = {}
 
 const mutations = {
   mergeEntities(state, entities) {
-    Object.assign(state, entities);
+    _.merge(state, entities);
   }
 }
 
