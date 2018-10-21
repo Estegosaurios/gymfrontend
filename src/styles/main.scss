@@ -1,4 +1,4 @@
-@import "~bootstrap/scss/bootstrap";
+@import "./custom.scss";
 
 html {
   position: relative;
@@ -6,7 +6,7 @@ html {
 }
 
 html, body {
-  background-color: #EEEEEE;
+  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 #app > div {

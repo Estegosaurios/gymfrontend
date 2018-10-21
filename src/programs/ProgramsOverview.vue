@@ -6,7 +6,7 @@
       class="mt-3"
       :title="program.name"
     />
-    <v-button
+    <v-button-floating
       class="button-fab mb-3 mr-3"
       @click="handleModal"
     />
@@ -19,14 +19,10 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import VCard from '@/core/VCard';
-import VButton from '@/core/VButtonFloating';
 import ProgramFormModal from '@/programs/ProgramFormModal';
 
 export default {
   components: {
-    VCard,
-    VButton,
     ProgramFormModal
   },
   data() {

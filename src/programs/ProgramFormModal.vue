@@ -2,7 +2,7 @@
   <v-modal>
     <v-card class="mt-3">
       <div class="card-body">
-        <label for="program-name">Program name:</label>
+        <label for="program-name">Program name</label>
         <div class="input-group mb-3">
           <input
             id="program-name"
@@ -19,12 +19,12 @@
       >
         <button
           type="button"
-          class="btn btn-secondary rounded-0 flex-fill"
+          class="btn btn-secondary rounded-0 flex-fill font-weight-bold font-italic"
           @click="onCancel"
         >CANCEL</button>
         <button
           type="button"
-          class="btn btn-danger rounded-0 flex-fill"
+          class="btn btn-danger rounded-0 flex-fill font-weight-bold font-italic"
           @click="onAccept"
         >ACCEPT</button>
       </div>
@@ -34,15 +34,9 @@
 
 <script>
 import { mapActions } from 'vuex';
-import VCard from '@/core/VCard';
-import VModal from '@/core/VModal';
 import programManager from '@/managers/program'
 
 export default {
-  components: {
-    VCard,
-    VModal
-  },
   data() {
     return {
       programData: null
