@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import TheHeader from '@/core/TheHeader';
 
 const WorkoutsOverview = () => import(/* webpackChunkName: "workouts-overview" */ '@/workouts/WorkoutsOverview');
+const CalendarOverview = () => import(/* webpackChunkName: "workouts-overview" */ '@/schedule/CalendarOverview');
 
 Vue.use(Router);
 
@@ -27,7 +28,7 @@ export default new Router({
       name: 'schedule-overview',
       components: {
         header: TheHeader,
-        default: WorkoutsOverview,
+        default: CalendarOverview,
       },
       meta: {
         name: 'Schedule',

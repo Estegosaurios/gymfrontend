@@ -44,10 +44,6 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   height: 3.75rem;
   padding: 0 1rem;
 }
