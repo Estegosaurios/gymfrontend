@@ -3,8 +3,9 @@
     <div
       v-for="workout in workouts"
       :key="workout.id"
+      class="workout"
     >
-      {{ workout.name }}
+      <span>{{ workout.name }}</span>
     </div>
   </div>
 </template>
@@ -31,3 +32,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.workout {
+  padding: 1rem;
+  margin-bottom: 0.0625rem;
+  background-color: $surface-color;
+}
+</style>

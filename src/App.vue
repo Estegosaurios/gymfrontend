@@ -33,6 +33,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.content > div {
+  width: 100%;
+}
+
 .slide-left-enter-active, .slide-left-leave-active,
 .slide-right-enter-active, .slide-right-leave-active {
   position: absolute;
