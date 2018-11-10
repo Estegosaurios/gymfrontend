@@ -50,7 +50,6 @@ export default {
   right: 0;
   height: 3.75rem;
   padding: 0 1rem;
-  background-color: #363640;
 }
 
 .header__list {
@@ -65,9 +64,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-weight: bold;
   text-transform: uppercase;
-  color: $background-text;
+  color: $background-text-color;
   overflow: hidden;
 
   transition: flex-shrink .5s ease;
@@ -75,6 +73,7 @@ export default {
 
   i {
     padding: 0 .5rem;
+    color: $background-icon-color;
   }
 
   span {

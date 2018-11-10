@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 html {
   position: relative;
   min-height: 100vh;
@@ -7,11 +9,13 @@ html, body {
   font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
   padding: 0;
+  color: $background-text-color;
+  background-color: $background-color; 
 }
 
 #app {
   height: calc(100vh - 3.75rem);
-  margin-top: 3.75rem;
+  margin: 3.75rem 1rem 0 1rem;
 }
 
 // Generic styles
