@@ -54,9 +54,30 @@ module.exports = {
             options: { importLoaders: 1 }
           },
           'postcss-loader',
-          'sass-loader'
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                resolve('src/styles/colors.scss')
+              ]
+            },
+          },
         ]
-      }
+      },
+      {
+        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: resolve('src'),  
+              publicPath: '../static/fonts' 
+            }
+          }
+        ]
+      },
     ]
   },
   devtool: '#cheap-module-eval-source-map',

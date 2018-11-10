@@ -1,17 +1,23 @@
-@import "./custom.scss";
-
 html {
   position: relative;
   min-height: 100vh;
 }
 
 html, body {
-  font-family: 'Bai Jamjuree', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-#app > div {
-  position: fixed;
-  top: 56px;
-  height: calc(100vh - 97.59px);
-  overflow-y: auto;
+#app {
+  height: calc(100vh - 3.75rem);
+  margin-top: 3.75rem;
+}
+
+// Generic styles
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
