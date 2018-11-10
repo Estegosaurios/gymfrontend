@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import entities from '@/store/entities';
-import programs from '@/store/programs';
+import workouts from '@/store/workouts';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
     entities,
-    programs
+    workouts
   }
 });

@@ -1,29 +1,39 @@
+import { normalize } from 'normalizr';
 import axios from '@/api/axios';
+import { toEntity } from '@/models/mapper';
+import workoutSchema from '@/models/workouts';
 
-const getPrograms = () => {
-  return get('/programs/')
+const getWorkouts = () => {
+  return get('/workouts/', [workoutSchema]);
 };
 
-const postProgram = (program) => {
-  return post('/programs/', program);
-};
-
-const get = (url) => {
-  return axios({
+const get = (url, schema) => {
+  const request = axios({
     method: 'get',
     headers: headers(),
-    url
+    url,
+    transformResponse: [
+      response => {
+        let data = JSON.parse(response)
+        data = Array.isArray(data)
+          ? data.map(d => toEntity(d))
+          : toEntity(data)
+
+        return normalize(data, schema);
+      }
+    ]
   });
+  return request;
 };
 
-const post = (url, data) => {
-  return axios({
-    method: 'post',
-    headers: headers(),
-    url,
-    data,
-  })
-};
+// const post = (url, data) => {
+//   return axios({
+//     method: 'post',
+//     headers: headers(),
+//     url,
+//     data,
+//   })
+// };
 
 const headers = () => {
   return {
@@ -32,6 +42,5 @@ const headers = () => {
 };
 
 export default {
-  getPrograms,
-  postProgram
+  getWorkouts
 };
